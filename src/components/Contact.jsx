@@ -25,7 +25,7 @@ const Contact = () => {
   return (
     <section id="contact" className="section-container" ref={container}>
       <h2 className="section-title text-4xl md:text-5xl font-bold text-center mb-16">Get In <span className="gradient-text">Touch</span></h2>
-      <div className="contact-container glass max-w-5xl mx-auto p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="contact-container glass max-w-5xl mx-auto p-6 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-12">
 
         {/* Left Column - Contact Info */}
         <div className="flex flex-col justify-between space-y-8">

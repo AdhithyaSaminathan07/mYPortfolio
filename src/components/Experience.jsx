@@ -49,7 +49,7 @@ const Experience = () => {
 
             <div className="experience-container max-w-4xl mx-auto flex flex-col gap-6">
                 {experiences.map((exp) => (
-                    <div key={exp.id} className="experience-card glass p-8 hover:border-primary transition-all duration-300 transform hover:-translate-y-1 opacity-0 translate-y-10">
+                    <div key={exp.id} className="experience-card glass p-6 md:p-8 hover:border-primary transition-all duration-300 transform hover:-translate-y-1 opacity-0 translate-y-10">
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                             <div>
                                 <h3 className="text-2xl font-bold text-white mb-1">{exp.role}</h3>

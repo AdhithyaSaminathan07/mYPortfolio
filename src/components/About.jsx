@@ -52,9 +52,9 @@ const About = () => {
 
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start max-w-7xl mx-auto">
                                 {/* Left Column: Text + Info Cards + Education */}
-                                <div className="left-column flex flex-col gap-6">
+                                <div className="left-column flex flex-col gap-6 order-2 lg:order-1">
                                         {/* Intro Text */}
-                                        <div className="about-text glass p-8">
+                                        <div className="about-text glass p-6 md:p-8">
                                                 <p className="mb-6 text-gray-300 text-lg">
                                                         👋 Hi, I’m Adhithya — Full-Stack Developer
                                                 </p>
@@ -117,7 +117,7 @@ const About = () => {
                                 </div>
 
                                 {/* Right Column: Image */}
-                                <div className="right-column flex justify-center lg:sticky lg:top-24">
+                                <div className="right-column flex justify-center lg:sticky lg:top-24 order-1 lg:order-2">
                                         <div className="glass p-4 w-full max-w-md aspect-square flex items-center justify-center">
                                                 <img src="https://placehold.co/400x400/1a1a1a/646cff?text=Adhithya" alt="Adhithya" className="w-full h-full object-cover rounded-lg" />
                                         </div>

@@ -29,7 +29,7 @@ body {
   }
 
   .section-container {
-    @apply max-w-7xl mx-auto px-8 py-16 relative;
+    @apply max-w-7xl mx-auto px-4 md:px-8 py-16 relative;
   }
 }
 

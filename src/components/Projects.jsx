@@ -9,11 +9,11 @@ const Projects = () => {
         const container = useRef();
         const projects = [
                 {
-                        title: 'E-commerce Dashboard',
-                        description: 'A comprehensive dashboard for e-commerce analytics with real-time data visualization.',
-                        tags: ['React', 'TypeScript', 'Chart.js', 'Firebase'],
+                        title: 'Billzzy Lite (PWA)',
+                        description: 'A smart mobile billing system (PWA) with WhatsApp billing, dynamic UPI QR payments, and inventory management.',
+                        tags: ['Next.js', 'PWA', 'MongoDB', 'AWS', 'Google OAuth'],
                         github: '#',
-                        demo: '#'
+                        demo: 'https://lite.billzzy.com/'
                 },
                 {
                         title: 'Task Management App',
@@ -62,7 +62,7 @@ const Projects = () => {
                         <h2 className="section-title-projects text-4xl md:text-5xl font-bold text-center mb-16">Projects</h2>
                         <div className="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {projects.map((project, index) => (
-                                        <div key={index} className="project-card glass p-8 shadow-lg text-left flex flex-col items-start hover:-translate-y-2 hover:border-primary transition-all duration-300">
+                                        <div key={index} className="project-card glass p-6 md:p-8 shadow-lg text-left flex flex-col items-start hover:-translate-y-2 hover:border-primary transition-all duration-300">
                                                 <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
                                                 <p className="text-gray-300 mb-6 text-base leading-relaxed">{project.description}</p>
 
