@@ -53,7 +53,7 @@ const TechStack = () => {
             <h2 className="section-title-stack text-4xl md:text-5xl font-bold text-center mb-16">Tech <span className="gradient-text">Stack</span></h2>
             <div className="skills-grid flex flex-wrap justify-center gap-4 md:gap-8 max-w-4xl mx-auto">
                 {skills.map(skill => (
-                    <div key={skill.name} className="skill-item flex flex-col items-center gap-3 group hover:-translate-y-2 transition-transform duration-300" title={skill.name}>
+                    <div key={skill.name} className="skill-item flex flex-col items-center gap-3 group" title={skill.name}>
                         <div
                             className="text-5xl p-6 rounded-2xl bg-glass-bg border border-glass-border flex items-center justify-center transition-all duration-300 group-hover:bg-white/5 group-hover:border-[var(--glow-color)] group-hover:shadow-[0_0_15px_var(--glow-color)]"
                             style={{

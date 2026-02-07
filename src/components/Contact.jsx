@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+// import emailjs from '@emailjs/browser';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -8,6 +9,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   const container = useRef();
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    // Get values from form
+    const userName = form.current.user_name.value;
+    const userEmail = form.current.user_email.value;
+    const message = form.current.message.value;
+
+    // Construct mailto link
+    // subject: New Message from Portfolio
+    // body: Name: ... Email: ... Message: ...
+    const subject = `New Message from ${userName}`;
+    const body = `Name: ${userName}%0D%0AEmail: ${userEmail}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+
+    // Open email client
+    window.location.href = `mailto:adhisami2003@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+    // Optional: Reset form
+    form.current.reset();
+  };
 
   useGSAP(() => {
     gsap.from('.contact-container', {
@@ -84,23 +107,34 @@ const Contact = () => {
         {/* Right Column - Email Contact Form */}
         <div className="bg-white/5 p-8 rounded-2xl border border-white/10">
           <h3 className="text-2xl font-bold text-white mb-6">Email Contact</h3>
-          <form className="flex flex-col gap-4">
+          <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
             <input
               type="text"
+              name="user_name"
               placeholder="Your Name"
+              required
               className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
             />
             <input
               type="email"
+              name="user_email"
               placeholder="Your Email"
+              required
               className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
             />
             <textarea
+              name="message"
               placeholder="Your Message"
               rows="4"
+              required
               className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors resize-none"
             ></textarea>
-            <button type="submit" className="btn btn-primary w-full mt-2">Send Message</button>
+            <button
+              type="submit"
+              className="btn btn-primary w-full mt-2"
+            >
+              Send Message
+            </button>
           </form>
         </div>
 

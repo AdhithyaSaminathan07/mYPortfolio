@@ -13,21 +13,30 @@ const Projects = () => {
                         description: 'A smart mobile billing system (PWA) with WhatsApp billing, dynamic UPI QR payments, and inventory management.',
                         tags: ['Next.js', 'PWA', 'MongoDB', 'AWS', 'Google OAuth'],
                         github: '#',
-                        demo: 'https://lite.billzzy.com/'
+                        demo: 'https://lite.billzzy.com/',
+                        image: '/project-billzzy.png',
+                        color: 'neon-pink',
+                        shadow: 'shadow-neon-pink'
                 },
                 {
-                        title: 'Task Management App',
-                        description: 'A productivity application for managing tasks and team collaboration.',
-                        tags: ['React', 'Redux', 'Node.js', 'MongoDB'],
+                        title: 'Techvaseegrah',
+                        description: 'A comprehensive corporate landing page featuring service showcases, case studies, and a blog, built with modern web technologies.',
+                        tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Shadcn UI'],
                         github: '#',
-                        demo: '#'
+                        demo: 'https://www.techvaseegrah.com/',
+                        image: '/project-tech.png',
+                        color: 'neon-blue',
+                        shadow: 'shadow-neon-blue'
                 },
                 {
-                        title: 'Weather Forecast App',
-                        description: 'A responsive weather application with location-based forecasts and interactive maps.',
-                        tags: ['React', 'API Integration', 'CSS Modules', 'Geolocation'],
+                        title: 'Billzzy – Advanced Billing Application',
+                        description: 'An advanced billing application for small businesses featuring POS integration, multi-warehouse inventory, invoice management, online payments, and real-time analytics.',
+                        tags: ['Next.js', 'TypeScript', 'MongoDB', 'Prisma', 'Tailwind CSS', 'Shadcn UI'],
                         github: '#',
-                        demo: '#'
+                        demo: 'https://billzzy.com/',
+                        image: '/project-billzzy-billing-system.png',
+                        color: 'neon-purple',
+                        shadow: 'shadow-neon-purple'
                 }
         ];
 
@@ -59,22 +68,47 @@ const Projects = () => {
 
         return (
                 <section id="projects" className="section-container" ref={container}>
-                        <h2 className="section-title-projects text-4xl md:text-5xl font-bold text-center mb-16">Projects</h2>
+                        <div className="text-center mb-16">
+                                <h2 className="section-title-projects text-4xl md:text-5xl font-bold mb-4">
+                                        Featured <span className="gradient-text">Projects</span>
+                                </h2>
+                                <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+                        </div>
+
                         <div className="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {projects.map((project, index) => (
-                                        <div key={index} className="project-card glass p-6 md:p-8 shadow-lg text-left flex flex-col items-start hover:-translate-y-2 hover:border-primary transition-all duration-300">
-                                                <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
-                                                <p className="text-gray-300 mb-6 text-base leading-relaxed">{project.description}</p>
+                                        <div key={index} className={`project-card glass-card p-6 md:p-8 flex flex-col items-start group hover:${project.shadow} border-t border-white/10`}>
+                                                <div className="relative w-full h-56 mb-8 flex items-center justify-center overflow-hidden rounded-2xl bg-black/20">
+                                                        <div className={`absolute inset-0 bg-${project.color}/20 blur-[50px] group-hover:blur-[60px] transition-all duration-500 opacity-50`}></div>
+                                                        <img
+                                                                src={project.image}
+                                                                alt={project.title}
+                                                                className="w-4/5 h-4/5 object-contain relative z-10 transform group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500 drop-shadow-2xl"
+                                                        />
+                                                </div>
 
-                                                <div className="flex flex-wrap gap-2 mb-8">
+                                                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
+                                                        {project.title}
+                                                </h3>
+                                                <p className="text-gray-400 mb-6 text-sm leading-relaxed line-clamp-3 group-hover:text-gray-300 transition-colors">
+                                                        {project.description}
+                                                </p>
+
+                                                <div className="flex flex-wrap gap-2 mb-8 mt-auto">
                                                         {project.tags.map(tag => (
-                                                                <span key={tag} className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-md">{tag}</span>
+                                                                <span key={tag} className={`text-xs font-medium text-${project.color} bg-${project.color}/10 border border-${project.color}/20 px-3 py-1 rounded-full`}>
+                                                                        {tag}
+                                                                </span>
                                                         ))}
                                                 </div>
 
-                                                <div className="flex gap-4 mt-auto w-full">
-                                                        <a href={project.github} className="px-6 py-2 rounded-md border border-glass-border text-white font-semibold hover:bg-white/10 transition-colors">GitHub</a>
-                                                        <a href={project.demo} className="px-6 py-2 rounded-md bg-primary text-white font-semibold hover:bg-secondary transition-colors">Live Demo</a>
+                                                <div className="flex gap-4 w-full">
+                                                        <a href={project.github} className="flex-1 text-center px-4 py-2 rounded-lg border border-white/10 text-white font-medium hover:bg-white/5 hover:border-white/30 transition-all duration-300 btn-glow">
+                                                                GitHub
+                                                        </a>
+                                                        <a href={project.demo} className={`flex-1 text-center px-4 py-2 rounded-lg bg-${project.color}/20 text-${project.color} border border-${project.color}/50 font-medium hover:bg-${project.color}/30 transition-all duration-300 shadow-[0_0_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_20px_rgba(var(--${project.color}-rgb),0.4)] btn-shine`}>
+                                                                Live Demo
+                                                        </a>
                                                 </div>
                                         </div>
                                 ))}

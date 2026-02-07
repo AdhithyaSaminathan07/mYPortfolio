@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import CodingAnimation from './CodingAnimation';
 
 const Hero = () => {
   const container = useRef();
@@ -53,8 +54,8 @@ const Hero = () => {
   }, { scope: container });
 
   return (
-    <section id="home" className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-between relative overflow-hidden pt-20 section-container" ref={container}>
-      <div className="z-10 max-w-xl text-center md:text-left mt-10 md:mt-0">
+    <section id="home" className="min-h-screen flex flex-col md:flex-row items-center justify-between relative overflow-hidden pt-36 md:pt-32 section-container" ref={container}>
+      <div className="z-10 w-full md:w-1/2 text-center md:text-left mt-4 md:mt-0">
         <h1 className="hero-title text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 opacity-0 translate-y-10">
           I am <span className="gradient-text">Adhithya</span>
         </h1>
@@ -67,6 +68,11 @@ const Hero = () => {
           <a href="#contact" className="hero-btn btn glass hover:bg-glass-border opacity-0 translate-y-10">Contact Me</a>
         </div>
       </div>
+
+      <div className="z-10 w-full md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end px-4">
+        <CodingAnimation />
+      </div>
+
       <div className="absolute top-0 right-0 w-full md:w-1/2 h-full z-0 pointer-events-none opacity-20 md:opacity-30">
         <div className="circle-1 absolute w-64 h-64 md:w-96 md:h-96 bg-primary rounded-full blur-[80px] opacity-40 top-[10%] right-[10%]"></div>
         <div className="circle-2 absolute w-48 h-48 md:w-72 md:h-72 bg-accent rounded-full blur-[80px] opacity-40 bottom-[20%] right-[20%]"></div>
